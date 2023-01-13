@@ -62,7 +62,7 @@ const AttendanceLog = () => {
     if (!snapshot.empty) {
       for (const doc of snapshot.docs) {
         let date = new Date(doc.data().timestamp.seconds * 1000)
-        let foundIndex = items.findIndex(x => x.key == format(date, 'YMdd'))
+        let foundIndex = items.findIndex(x => x.key == format(date, 'YMMdd'))
         if (foundIndex !== -1){
           items[foundIndex].data.push({
             id: doc.id, ...doc.data()
